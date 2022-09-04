@@ -129,5 +129,5 @@ dmypy.json
 .pyre/
 
 #yeah
-.json
-.pem
+*.json
+*.pem
