@@ -64,14 +64,26 @@ class util(discord.Cog): # create a class for our cog that inherits from command
         data = pd.read_csv(url)
         df=pd.DataFrame(data)
         comm=df['Commands'].tolist() 
-        commands = ""
+        commands1 = ""
+        commands2 = ""
+        cmax=10
+        c1 = 0
+        c2 = 0
         for i in comm: #Iterate through the google sheet with the commands
-            commands+= i+"\n"
+            if c1 < cmax:
+                commands1+= i+"\n"
+                c1+=1
+            elif c2 < cmax:
+                commands2+= i+"\n"
+                c2+=1
+            else:
+                pass
         embed=discord.Embed(
             title="RanseraBot v2",
             description="RanseraBot was built to help the staff and players of [Ransera](https://legendofransera.com/). It comes with several useful commands that will give players more information about the world, and a handful of fun features that we hope will add to the enjoyment of the game.",
             colour=discord.Colour.purple())
-        embed.add_field(name="Main Commands",value= commands)
+        embed.add_field(name="Commands",value= commands1)
+        embed.add_field(name="Commands Cont.",value= commands2)
         await ctx.respond(embed=embed)
 
     #Basic Lookup
