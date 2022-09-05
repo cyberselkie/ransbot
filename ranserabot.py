@@ -2,12 +2,12 @@ import os
 from dotenv import load_dotenv
 import discord
 from discord.utils import get
+from cogs.variables import variables
 
 #---------------
 load_dotenv()
 TOKEN = os.getenv("TOKEN")
-
-servers=[957056381154918461,747312626605883423]
+servers = variables.servers
 intents = discord.Intents.default()
 intents.members = True
 

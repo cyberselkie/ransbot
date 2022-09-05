@@ -8,13 +8,11 @@ import pandas as pd
 import random
 import typing
 from typing import List
+from cogs.variables import variables
 
-
-servers=[957056381154918461,747312626605883423]
-
-#Google Sheet Info
-sheet = "https://docs.google.com/spreadsheets/d/{}/export?format=csv&gid={}"
-infosheet_id="1zhrJue-WXa6p1kRFqtdcDnqFQosXofHvEmCrY3JXYqQ"
+servers=variables.servers
+sheet = variables.sheet
+infosheet_id= variables.infosheet_id
 
 # Defines a custom button that contains the logic of the game.
 # The ['TicTacToe'] bit is for type hinting purposes to tell your IDE or linter

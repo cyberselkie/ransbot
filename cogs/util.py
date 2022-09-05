@@ -6,14 +6,11 @@ from discord.ext import commands
 from discord.commands import SlashCommandGroup
 from discord.utils import get
 import datetime
-from datetime import date, datetime
+from cogs.variables import variables
 
-#required variables
-servers=[957056381154918461,747312626605883423]
-
-#Google Sheet Info
-sheet = "https://docs.google.com/spreadsheets/d/{}/export?format=csv&gid={}"
-infosheet_id="1zhrJue-WXa6p1kRFqtdcDnqFQosXofHvEmCrY3JXYqQ"
+servers=variables.servers
+sheet = variables.sheet
+infosheet_id= variables.infosheet_id
 
 
 class util(discord.Cog): # create a class for our cog that inherits from commands.Cog
