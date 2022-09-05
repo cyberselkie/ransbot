@@ -3,11 +3,11 @@ from discord import Option
 from discord.commands import SlashCommandGroup
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+from cogs.variables import variables
 
-    #Authorize the API
-        #required variables
-servers=[957056381154918461,747312626605883423]
-infosheet_id="1zhrJue-WXa6p1kRFqtdcDnqFQosXofHvEmCrY3JXYqQ"
+servers=variables.servers
+infosheet_id= variables.infosheet_id
+
 gc = gspread.service_account(filename='client_key.json')
 url = gc.open_by_key(infosheet_id)
 worksheet = url.worksheet("sheets")
